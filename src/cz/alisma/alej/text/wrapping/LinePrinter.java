@@ -63,7 +63,7 @@ public class LinePrinter {
         
         for (String word : words) {
             if (lengthSoFar + 1 + word.length() > width) {
-                output.println(aligner.format(line));
+                output.println(aligner.format(line, width, lengthSoFar));
                 line.clear();
                 lengthSoFar = -1;
             } else {
@@ -74,7 +74,7 @@ public class LinePrinter {
         }
         
         if (!line.isEmpty()) {
-            output.println(aligner.format(line));
+            output.println(aligner.format(line, width, lengthSoFar));
         }
     }
 

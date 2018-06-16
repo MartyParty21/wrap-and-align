@@ -29,9 +29,9 @@ import java.util.List;
 /** Left-aligns a line. */
 public class LeftAligner implements Aligner {
 
-    @Override
-    public String format(List<String> words) {
-        StringBuilder result = new StringBuilder();
+	@Override
+	public String format(List<String> words, int width, int lengthSoFar) {
+		StringBuilder result = new StringBuilder();
         
         boolean first = true;
         for (String w : words) {
@@ -44,6 +44,6 @@ public class LeftAligner implements Aligner {
         }
         
         return result.toString();
-    }
+	}
 
 }
